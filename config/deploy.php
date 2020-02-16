@@ -109,16 +109,10 @@ return [
     */
 
     'hosts' => [
-        'deployer.aurorachristianschool.com' => [
+        '46.101.135.214' => [
             'deploy_path' => '/var/www/aurorachristianschool.com',
             'user' => 'deployer',
             'identityFile' => env('DEPLOYER_KEY', '~/.ssh/public_key.pub' ), 
-        ],
-        '46.101.135.214' => [
-            'host' => '46.101.135.214', 
-            'deploy_path' => '/var/www/aurorachristianschool.com/',
-            'user' => 'deployer',
-            'identityFile' => '~/.ssh/id_rsa.pub',
         ],
     ],
 
