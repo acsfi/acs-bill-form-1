@@ -430,9 +430,9 @@
     </body>
 
 
-    <script src="{{asset('js/vue/functions.js')}}"></script>
-    <script src="{{asset('js/vue/events.js')}}"></script>
-    <script src="{{asset('js/vue/app.js')}}"></script>
+    <script src="{{secure_asset('js/vue/functions.js')}}"></script>
+    <script src="{{secure_asset('js/vue/events.js')}}"></script>
+    <script src="{{secure_asset('js/vue/app.js')}}"></script>
 
 
 
