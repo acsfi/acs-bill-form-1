@@ -26,3 +26,9 @@ Route::post('/update/bill/{id}', 'BillController@update_bill');
 
 Route::post('/print/bill/{ids}', 'BillController@print_bills');
 Route::post('/records/save', 'BillController@records_save');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
