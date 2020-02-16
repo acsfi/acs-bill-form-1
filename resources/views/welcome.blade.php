@@ -6,9 +6,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}" />
 
         <title>{{$title}}</title>
-        <script src="{{asset('js/vue.min.js')}}"></script>
-        <script src="{{asset('js/jquery.js')}}"></script>
-        <link href="{{asset('css/app.css')}}" rel="stylesheet">
+        <script src="{{secure_asset('js/vue.min.js')}}"></script>
+        <script src="{{secure_asset('js/jquery.js')}}"></script>
+        <link href="{{secure_asset('css/app.css')}}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand|Raleway&display=swap" rel="stylesheet">
     </head>
 
