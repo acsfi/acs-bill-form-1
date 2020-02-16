@@ -102,7 +102,7 @@
                         <label for="u-p-a">Unpaid Previous Account</label>
                     </div>
                     <div>
-                        <input :disabled="!bill_obj.name" class="form-validate number-only answer" type="text" id="u-p-a" {{-- v-bind:value="Edit.unpaid_previous_account" --}} v-model="Edit.unpaid_previous_account" v-on:keyup="Edit_upa" />
+                        <input :disabled="bill_obj.name == ''" class="form-validate number-only answer" type="text" id="u-p-a" {{-- v-bind:value="Edit.unpaid_previous_account" --}} v-model="Edit.unpaid_previous_account" v-on:keyup="Edit_upa" />
                     </div>
                 </div>
                 <div>
