@@ -16,7 +16,7 @@ function create_student_bill(data)
 {
     $.ajax({
         data: data,
-        type: "POS",
+        type: "POST",
         url: "/create/bill",
         beforeSend: function (request) {
             return request.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));
