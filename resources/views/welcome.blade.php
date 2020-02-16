@@ -81,7 +81,7 @@
             {{-- Add Student Bill --}}
             <div v-if="Add" class="add-student-form">
                 <div class="form-div">
-                <div v-if="!bill_obj.name">
+                <div v-if="bill_obj.name">
                     <div><label for="grade-level">Grade Level:</label></div>
                     <div class="answer">
                         <select class="select-css" name="grade-level" id="grade-level">
