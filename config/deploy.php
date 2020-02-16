@@ -110,7 +110,7 @@ return [
 
     'hosts' => [
         'deployer.aurorachristianschool.com' => [
-            'deploy_path' => '/var/www/aurorachristianschool.com/',
+            'deploy_path' => '/var/www/aurorachristianschool.com',
             'user' => 'deployer',
             'identityFile' => env('DEPLOYER_KEY', '~/.ssh/public_key.pub' ), 
         ],
