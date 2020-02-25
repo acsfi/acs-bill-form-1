@@ -1,0 +1,8 @@
+{
+    "php-docblocker.author": {
+        "name": "Dione Domingo",
+        "email": "i@dionedomingo.com"
+    },
+    "php-docblocker.returnGap": true,
+    "php-docblocker.returnVoid": true
+}
