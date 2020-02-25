@@ -9,9 +9,13 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                       
+                        @if (Auth::user()->id == 1)
+                                <a href="{{route('users')}}" class="btn btn-secondary">
+                                    Users
+                                </a>
+                        @endif
+                    
                     @endif
 
                     You are logged in!

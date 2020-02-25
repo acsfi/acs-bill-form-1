@@ -11,9 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome', ["title" => "Hello"]);
-});
+
+Route::get('/','PagesController@index');
+
+// Users
+Route::get('/users','User\UsersManagerController@index')->name('users');
+Route::get('/users/create','User\UsersManagerController@create')->name('users.create');
+
+Route::get('/roles','User\RoleManagerController@create')->name('roles');
+Route::get('/roles/create','User\RoleManagerController@create')->name('roles.create');
+
+Route::get('/permissions/create','User\PermissionManagerController@create')->name('permission.create');
+
+Route::post('/users/store','User\UsersManagerController@store')->name('users.store');
+
+// Users Roles
+Route::get('/users/roles','User\UsersManagerController@roles')->name('users.roles');
+// Users Roles
+Route::get('/users/permissions','User\UsersManagerController@permissions')->name('users.permissions');
+
+Route::get('/bill','BillController@index')->name('bill');
+
 Route::get('/print-page', function () {
     return view('print', ["title" => "Print"]);
 });
