@@ -15,15 +15,17 @@
 Route::get('/','PagesController@index');
 
 // Users
-Route::get('/users','User\UsersManagerController@index')->name('users');
-Route::get('/users/create','User\UsersManagerController@create')->name('users.create');
-
-Route::get('/roles','User\RoleManagerController@create')->name('roles');
-Route::get('/roles/create','User\RoleManagerController@create')->name('roles.create');
-
-Route::get('/permissions/create','User\PermissionManagerController@create')->name('permission.create');
-
+Route::get('/users/{view?}','User\UsersManagerController@index')->name('users');
 Route::post('/users/store','User\UsersManagerController@store')->name('users.store');
+
+Route::get('/roles','User\RoleManagerController@index')->name('roles');
+Route::get('/roles/create','User\RoleManagerController@create')->name('roles.create');
+Route::post('/roles/store','User\RoleManagerController@store')->name('roles.store');
+
+Route::get('/permissions','User\PermissionManagerController@index')->name('permissions');
+Route::get('/permissions/create','User\PermissionManagerController@create')->name('permissions.create');
+Route::post('/permissions/store','User\PermissionManagerController@store')->name('permissions.store');
+
 
 // Users Roles
 Route::get('/users/roles','User\UsersManagerController@roles')->name('users.roles');
@@ -50,3 +52,14 @@ Route::post('/records/save', 'BillController@records_save');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/integrations', 'HomeController@index')->name('home');
+
+Route::view('/integrations', 'integrations');
+
+
+Route::get('/user/{id}/edit','User\UserController@edit')->name('users.edit');
+Route::post('/user/{id}/update','User\UserController@store')->name('users.update');
+
+Route::get('/user/{id}/upload','User\UserController@upload')->name('users.upload');

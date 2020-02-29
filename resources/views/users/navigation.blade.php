@@ -1,12 +1,18 @@
 
-<ul class="nav justify-content-center nav-pills nav-fill">
+<ul class="nav nav-pills">
     <li class="nav-item">
-        <a class="nav-link {{ in_array(request()->route()->getName() ,['users','users.create']) ? 'active' : '' }}" href="{{route('users')}}"> {{ __('Users') }} </a>
+        <a class="nav-link {{ in_array(request()->route()->getName() ,['users']) ? 'active' : '' }}" href="{{route('users')}}"> 
+            <b-icon icon="people"></b-icon> {{ __('Users') }}
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link {{in_array(request()->route()->getName() ,['roles','roles.create']) ? 'active' : '' }}" href="{{route('roles')}}">{{ __('Roles') }}</a>
+        <a class="nav-link {{in_array(request()->route()->getName() ,['roles']) ? 'active' : '' }}" href="{{route('roles')}}">  
+            <b-icon icon="shield"></b-icon>   {{ __('Roles') }}
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link {{ url()->current() == route('users.permissions') ? 'active' : '' }}" href="{{route('users.permissions')}}">{{ __('Permissions') }}</a>
+        <a class="nav-link {{in_array(request()->route()->getName() ,['permissions']) ? 'active' : '' }}" href="{{route('permissions')}}"> 
+            <b-icon icon="shield-lock"></b-icon> {{ __('Permissions') }}
+        </a>
     </li>
 </ul>

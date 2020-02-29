@@ -25,12 +25,17 @@ class UsersManagerController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function index($view='list')
     {
+        
+        if($view=='list'){
+            $users = User::paginate(25);
+            return view('users.list', [ 'users' => $users ]);
+        }
+        if($view=='create'){
+            return view('users.create');
+        }
 
-        $users = User::paginate(25);
-
-        return view('users.manager', [ 'users' => $users ]);
     }
 
     /**
@@ -40,9 +45,7 @@ class UsersManagerController extends Controller
      */
     public function create(Request $request,$type='user')
     {   
-        if( $type == 'user')        return view('users.create'); 
-        if( $type == 'role')        return view('users.create_role'); 
-        if( $type == 'permission')  return view('users.create_permission'); 
+        return view('users.create'); 
     }
     /**
      * User store.

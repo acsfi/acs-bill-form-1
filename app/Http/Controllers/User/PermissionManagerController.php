@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Role;
 use App\Permission;
+use Illuminate\Support\Facades\Hash;
 
-
-class RoleManagerController extends Controller
+class PermissionManagerController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,16 +23,12 @@ class RoleManagerController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
-    {
+    public function index(Request $request,$type='list')
+    {   
+        
+        $permission = Permission::paginate(25);
 
-        $roles = Role::paginate(25);
-        $permissions = Permission::get();
-        $ps = [];
-        foreach($permissions as $p){
-            $ps[] = ['value' => $p->id,'text' => $p->display_name];
-        }
-        return view('roles.list', [ 'roles' => $roles ,'permissions'=>json_encode($ps)]);
+        return view('permissions.list',['permissions'=>$permission]);
     }
 
     /**
@@ -43,7 +38,9 @@ class RoleManagerController extends Controller
      */
     public function create(Request $request,$type='user')
     {
-        return view('roles.create'); 
+        $creatablePermissions = config('laratrust.permissions');
+        
+        return view('permissions.create',["definedPermissions"=>$creatablePermissions]); 
     }
     /**
      * User store.
@@ -52,7 +49,7 @@ class RoleManagerController extends Controller
      */
     public function store(Request $request)
     {
-        $role = Role::firstOrCreate([
+        $role = Permission::firstOrCreate([
             'name'          => $request->input('name') ,
             'display_name'  => $request->input('display') ,
             'description'   => $request->input('description') ,

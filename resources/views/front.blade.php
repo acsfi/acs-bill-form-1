@@ -28,15 +28,15 @@
                     Login
                 </a>
             </p>
-        
+
     </main>
-    @else 
+    @else
 
         <div class="">
 
 
             @if (Auth::user()->id == 1)
-                    
+
                 <a href="{{route('users')}}" class="btn btn-secondary">
                     Users
                 </a>
@@ -47,7 +47,7 @@
         </div>
 
 
-        
+
 
     @endguest
 
@@ -56,5 +56,7 @@
             <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         </div>
     </footer>
+
+
 </div>
 @endsection

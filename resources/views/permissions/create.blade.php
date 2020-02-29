@@ -13,20 +13,24 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="card shadow border-0">
-                <h1 class="card-header bg-white">{{ __('Create role') }}</h1>
+                <h1 class="card-header bg-white">{{ __('Create permission') }}</h1>
 
                 <div class="card-body">
 
-                    <form method="POST" action="{{route('roles.store')}}">
+                    <form method="POST" action="{{route('permissions.store')}}">
                         @csrf   
 
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" required class="form-control" id="name" placeholder="Role name">
+                            <select name="name" class="form-control">
+                                @foreach($definedPermissions as $permission)
+                                    <option value="{{$permission}}">{{$permission}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="name">Display name</label>
-                            <input type="text" name="display" required class="form-control" id="display" placeholder="Display name">
+                            <input type="text" name="display" required class="form-control" id="display" placeholder="Display title">
                         </div>
                         <div class="form-group">
                             <label for="desc">Description</label>

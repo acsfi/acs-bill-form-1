@@ -1,11 +1,17 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900');
 
 // Variables
 @import 'variables';
 // Variables
-@import 'old'; 
+@import 'old';
 // Bootstrap
 
 @import '~bootstrap/scss/bootstrap';
 
+
+img.avatar.avatar-sm{
+    height: 30px;
+    width: 30px;
+}

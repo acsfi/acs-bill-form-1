@@ -265,4 +265,11 @@ return [
     |
     */
     'magic_can_method_case' => 'kebab_case',
+
+    'permissions' => [
+        'bill.create',
+        'bill.view',
+        'bill.update',
+        'read.students',
+    ]
 ];
