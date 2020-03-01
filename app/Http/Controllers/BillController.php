@@ -9,6 +9,21 @@ class BillController extends Controller
 {
     //
     public $timestamps = true;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    public function index(){
+        return view('welcome', ["title" => "Bill"]);
+    }
     public function fetch_all_bills(Request $request)
     {
         $bills = bill::orderBy("updated_at", "desc");

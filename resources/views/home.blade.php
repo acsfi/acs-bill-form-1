@@ -9,10 +9,19 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                       
+                        @if (Auth::user()->id == 1)
+                                <a href="{{route('users')}}" class="btn btn-secondary">
+                                    Users
+                                </a>
+                        @endif
+                    
                     @endif
+
+                    <passport-clients></passport-clients>
+                    <passport-authorized-clients></passport-authorized-clients>
+                    <passport-personal-access-tokens></passport-personal-access-tokens>
+
 
                     You are logged in!
                 </div>

@@ -19,7 +19,8 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('role-permission', require('./components/Users/RolePermission.vue').default);
+Vue.component('upload-image', require('./components/Image/Upload.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,6 +28,55 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+//import MaskedInput from 'vue-masked-input';
+
+/*
+import UploadImage from 'vue-upload-image';
+
+// register globally
+Vue.component('upload-image', UploadImage)
+*/
+
+
+
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
+
+import 'vue-bootstrap-selectpicker/dist/css/vue-bootstrap-selectpicker.min.css'
+import SelectPicker from 'vue-bootstrap-selectpicker'
+
+Vue.use(SelectPicker)
+
+require('es6-promise').polyfill();
+window.axios = require('axios');
+
+let token = $('meta[name="csrf-token"]').attr('content');
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-CSRF-TOKEN': token
+};
+
+Vue.component(
+    'passport-clients',
+    require('./components/passport/Clients.vue').default
+);
+
+Vue.component(
+    'passport-authorized-clients',
+    require('./components/passport/AuthorizedClients.vue').default
+);
+
+Vue.component(
+    'passport-personal-access-tokens',
+    require('./components/passport/PersonalAccessTokens.vue').default
+);
+
 const app = new Vue({
     el: '#app',
+    components: {
+    }
+
 });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Role;
 use Illuminate\Http\Request;
 
 /*
@@ -15,4 +16,13 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::middleware('auth:api')->post('/role/update/{role_id}', function (Request $request,$role_id) {
+
+
+    $role = Role::find($role_id);
+    $role->permissions()->sync($request->post('value'));
+    $role->save();
+    return response()->json(['role'=>$role->permissions]);
 });
