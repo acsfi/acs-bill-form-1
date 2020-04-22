@@ -21,13 +21,6 @@
     @guest
     <main role="main" class="inner cover text-center">
 
-            <h1 class="cover-heading">Login below.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-                <a href="{{route('login')}}" class="btn btn-lg btn-secondary">
-                    Login
-                </a>
-            </p>
 
     </main>
     @else
@@ -53,7 +46,8 @@
 
     <footer class="mastfoot mt-auto">
         <div class="inner">
-            <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            <p>#38 Zamora Street, Buag
+            <br />Bambang, Nueva Vizcaya 3702 </p>
         </div>
     </footer>
 
