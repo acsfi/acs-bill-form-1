@@ -21,8 +21,6 @@
     @guest
     <main role="main" class="inner cover text-center">
 
-        <h1>Who are we?</h1>
-
         <div class="jumbotron">
             <h1 class="display-4">Who are we?</h1>
             <p class="lead">Meet some of our staff that you will encounter during your everyday life at the school.</p>
@@ -38,6 +36,16 @@
             <h1 class="display-4">What do the students say??</h1>
             <hr class="my-4">
 
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+        </div>
+
+
+        <div class="jumbotron">
+            <h1 class="display-4">Do you want to become a student at ACS?</h1>
+            <hr class="my-4">
+            <p class="lead">Send us a non-binding application. We would love to hear from you..</p>
             <p class="lead">
               <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </p>
