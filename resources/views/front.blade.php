@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<div class="container ">
+<div >
     <header hidden class="masthead mb-auto">
         <div class="inner">
             <h3 class="masthead-brand">Cover</h3>
@@ -21,15 +21,7 @@
     @guest
     <main role="main" class="inner cover text-center">
 
-        <div class="jumbotron">
-            <h1 class="display-4">Who are we?</h1>
-            <p class="lead">Meet some of our staff that you will encounter during your everyday life at the school.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </p>
-        </div>
+
 
 
         <div class="jumbotron">

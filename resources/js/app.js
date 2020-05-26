@@ -5,6 +5,9 @@
  */
 
 require('./bootstrap');
+require('../../node_modules/paper-kit-2/assets/js/bootstrap-switch.min.js');
+require('../../node_modules/paper-kit-2/assets/js/paper-kit.js');
+
 
 window.Vue = require('vue');
 
@@ -74,9 +77,44 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue').default
 );
 
+
+
+
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+import App from './components/App'
+import Hello from './components/Hello'
+import Home from './components/Home'
+import About from './components/About'
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/who',
+            name: 'who',
+            component: About,
+        },
+        {
+            path: '/hi',
+            name: 'hi',
+            component: Hello,
+        },
+    ],
+});
+
+
 const app = new Vue({
     el: '#app',
     components: {
-    }
-
+        App
+    },
+    router,
 });

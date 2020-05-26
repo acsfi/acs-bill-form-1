@@ -9,13 +9,13 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                       
+
                         @if (Auth::user()->id == 1)
                                 <a href="{{route('users')}}" class="btn btn-secondary">
                                     Users
                                 </a>
                         @endif
-                    
+
                     @endif
 
                     <passport-clients></passport-clients>
